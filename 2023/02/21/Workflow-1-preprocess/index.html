@@ -36,7 +36,7 @@
 <meta property="og:image" content="http://example.com/images/8.jpg">
 <meta property="og:image" content="http://example.com/images/9.jpg">
 <meta property="article:published_time" content="2023-02-21T07:07:40.000Z">
-<meta property="article:modified_time" content="2023-02-21T09:21:53.664Z">
+<meta property="article:modified_time" content="2023-02-21T12:52:47.148Z">
 <meta property="article:author" content="Yajie">
 <meta property="article:tag" content="Workflow">
 <meta name="twitter:card" content="summary">
@@ -194,7 +194,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-02-21 15:07:40 / Modified: 17:21:53" itemprop="dateCreated datePublished" datetime="2023-02-21T15:07:40+08:00">2023-02-21</time>
+      <time title="Created: 2023-02-21 15:07:40 / Modified: 20:52:47" itemprop="dateCreated datePublished" datetime="2023-02-21T15:07:40+08:00">2023-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -226,7 +226,7 @@
 <h3 id="8-过滤PTM"><a href="#8-过滤PTM" class="headerlink" title="8.过滤PTM"></a>8.过滤PTM</h3><p>（如果做全蛋白，则跳过此步骤）<br>Filter rows -&gt; filter rows based on categorical column<br><img src="/images/5.jpg" alt="过滤2">    </p>
 <h4 id="8-1-1处选为PTM，2处根据数据类型选择ptm加入右边的边框，3处选Keep-matching-rows"><a href="#8-1-1处选为PTM，2处根据数据类型选择ptm加入右边的边框，3处选Keep-matching-rows" class="headerlink" title="8.1 1处选为PTM，2处根据数据类型选择ptm加入右边的边框，3处选Keep matching rows"></a>8.1 1处选为PTM，2处根据数据类型选择ptm加入右边的边框，3处选Keep matching rows</h4><h3 id="9-填补缺失值"><a href="#9-填补缺失值" class="headerlink" title="9.填补缺失值"></a>9.填补缺失值</h3><p>此步骤填补缺失值与前面筛选有效值有关，如果筛选得严格，则填补缺失值影响不大，如果筛选的宽松，则填补缺失值会对以后差异分析有影响.<br>一般方法：Imputation -&gt; replace missing values from normal distribution<br>其余两种也可选择，根据具体需要，by constant则填补固定值，by NaN则填补为NaN，没有大用，并且可能会对生信分析数据识别产生错误。<br><img src="/images/6.jpg" alt="填补缺失值"><br>可以看到默认Mode选项是对每列分别计算正态分布，然后填补。  </p>
 <h3 id="10-归一化"><a href="#10-归一化" class="headerlink" title="10.归一化"></a>10.归一化</h3><p>对列进行归一化，消除样本总量差异带来的intensity的差异<br>Normalization -&gt; Subtract<br><img src="/images/7.jpg" alt="归一化"><br>Matrix access选为Colunms<br>Subtract what选为Median,Mean都可，一般为mean，为除以每列总和除以总蛋白数，因为每组蛋白数是一样的，则是用每组的总数来做归一化，消除总量的影响。  </p>
-<h3 id="11-导出预处理数值"><a href="#11-导出预处理数值" class="headerlink" title="11.导出预处理数值"></a>11.导出预处理数值</h3><p><img src="/images/8.jpg" alt="保存"><br>保存处理好的数据最后一步，同时，中间的每一步结果也可以根据需要导出。  </p>
+<h3 id="11-导出预处理数值"><a href="#11-导出预处理数值" class="headerlink" title="11.导出预处理数值"></a>11.导出预处理数值</h3><p><img src="/images/8.jpg" alt="保存"><br>保存处理好的数据最后一步，同时，中间的每一步结果也可以根据需要导出。<br>注意文件名设为英文  </p>
 <h3 id="12-打开处理流程文件"><a href="#12-打开处理流程文件" class="headerlink" title="12.打开处理流程文件"></a>12.打开处理流程文件</h3><p><img src="/images/9.jpg" alt="打开sps文件"><br>同时注意，处理流程也要保留，以供之后查阅。<br>下次再次打开本次处理流程也从文件处点击打开，步骤为：先打开Perseus,再点击 文件 -&gt; open</p>
 
     </div>
@@ -246,8 +246,8 @@
             <div class="post-nav-item">
             </div>
             <div class="post-nav-item">
-                <a href="/2023/02/21/Workflow-2-differential-expression/" rel="next" title="Workflow(2)differential expression">
-                  Workflow(2)differential expression <i class="fa fa-chevron-right"></i>
+                <a href="/2023/02/21/Workflow-2-differential-expression/" rel="next" title="Workflow(2) Differential expression">
+                  Workflow(2) Differential expression <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

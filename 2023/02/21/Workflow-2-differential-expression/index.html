@@ -19,28 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Workflow(2) Preprocess准备工作1.下载R, R studiohttps:&#x2F;&#x2F;cran.r-project.org&#x2F;mirrors.htmlhttps:&#x2F;&#x2F;posit.co&#x2F;download&#x2F;rstudio-desktop&#x2F;   2.完整复制以下代码到R建议用txt等文本文件保存最原始的以及自己修改过的各种版本，方便改进       library(&quot;lattice&amp;">
+    <meta name="description" content="Workflow(2) Differential expression准备工作1.下载R, R studiohttps:&#x2F;&#x2F;cran.r-project.org&#x2F;mirrors.htmlhttps:&#x2F;&#x2F;posit.co&#x2F;download&#x2F;rstudio-desktop&#x2F; 实现代码1.完整复制以下代码到R 建议用txt等文本文件保存最原始的以及自己修改过的各种版本，方便改进 代码中所有需要更改的地方">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Workflow(2)differential expression">
+<meta property="og:title" content="Workflow(2) Differential expression">
 <meta property="og:url" content="http://example.com/2023/02/21/Workflow-2-differential-expression/index.html">
 <meta property="og:site_name" content="Yannis">
-<meta property="og:description" content="Workflow(2) Preprocess准备工作1.下载R, R studiohttps:&#x2F;&#x2F;cran.r-project.org&#x2F;mirrors.htmlhttps:&#x2F;&#x2F;posit.co&#x2F;download&#x2F;rstudio-desktop&#x2F;   2.完整复制以下代码到R建议用txt等文本文件保存最原始的以及自己修改过的各种版本，方便改进       library(&quot;lattice&amp;">
+<meta property="og:description" content="Workflow(2) Differential expression准备工作1.下载R, R studiohttps:&#x2F;&#x2F;cran.r-project.org&#x2F;mirrors.htmlhttps:&#x2F;&#x2F;posit.co&#x2F;download&#x2F;rstudio-desktop&#x2F; 实现代码1.完整复制以下代码到R 建议用txt等文本文件保存最原始的以及自己修改过的各种版本，方便改进 代码中所有需要更改的地方">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/10.jpg">
 <meta property="article:published_time" content="2023-02-21T09:27:33.000Z">
-<meta property="article:modified_time" content="2023-02-21T10:16:48.520Z">
+<meta property="article:modified_time" content="2023-02-21T13:23:03.251Z">
 <meta property="article:author" content="Yajie">
 <meta property="article:tag" content="Workflow">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/10.jpg">
 
 
 <link rel="canonical" href="http://example.com/2023/02/21/Workflow-2-differential-expression/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2023/02/21/Workflow-2-differential-expression/","path":"2023/02/21/Workflow-2-differential-expression/","title":"Workflow(2)differential expression"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2023/02/21/Workflow-2-differential-expression/","path":"2023/02/21/Workflow-2-differential-expression/","title":"Workflow(2) Differential expression"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Workflow(2)differential expression | Yannis</title>
+<title>Workflow(2) Differential expression | Yannis</title>
   
 
 
@@ -105,7 +107,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Workflow-2-Preprocess"><span class="nav-number">1.</span> <span class="nav-text">Workflow(2) Preprocess</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BDR-R-studio"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.下载R, R studio</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%AE%8C%E6%95%B4%E5%A4%8D%E5%88%B6%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%E5%88%B0R"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.完整复制以下代码到R</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Workflow-2-Differential-expression"><span class="nav-number">1.</span> <span class="nav-text">Workflow(2) Differential expression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BDR-R-studio"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.下载R, R studio</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="nav-number">1.2.</span> <span class="nav-text">实现代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%8C%E6%95%B4%E5%A4%8D%E5%88%B6%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%E5%88%B0R"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.完整复制以下代码到R</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%AE%80%E6%98%93%E7%81%AB%E5%B1%B1%E5%9B%BE%E5%92%8C%E7%83%AD%E5%9B%BE"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.简易火山图和热图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%81%AB%E5%B1%B1%E5%9B%BE%E5%8F%AF%E4%BB%A5%E7%94%B11-%E7%9A%84%E6%95%B0%E6%8D%AE%E7%9B%B4%E6%8E%A5%E7%BB%98%E5%88%B6%EF%BC%8C%E6%89%80%E4%BB%A5%E8%BF%99%E9%87%8C%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">2.1最简单的火山图可以由1.的数据直接绘制，所以这里介绍一下方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-%E7%AE%80%E6%98%93%E7%83%AD%E5%9B%BE"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">2.2 简易热图</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -167,12 +169,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Workflow(2)differential expression | Yannis">
+      <meta itemprop="name" content="Workflow(2) Differential expression | Yannis">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Workflow(2)differential expression
+          Workflow(2) Differential expression
         </h1>
 
         <div class="post-meta-container">
@@ -184,7 +186,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-02-21 17:27:33 / Modified: 18:16:48" itemprop="dateCreated datePublished" datetime="2023-02-21T17:27:33+08:00">2023-02-21</time>
+      <time title="Created: 2023-02-21 17:27:33 / Modified: 21:23:03" itemprop="dateCreated datePublished" datetime="2023-02-21T17:27:33+08:00">2023-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -206,20 +208,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Workflow-2-Preprocess"><a href="#Workflow-2-Preprocess" class="headerlink" title="Workflow(2) Preprocess"></a>Workflow(2) Preprocess</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a><strong>准备工作</strong></h2><h3 id="1-下载R-R-studio"><a href="#1-下载R-R-studio" class="headerlink" title="1.下载R, R studio"></a>1.下载R, R studio</h3><p><a target="_blank" rel="noopener" href="https://cran.r-project.org/mirrors.html">https://cran.r-project.org/mirrors.html</a><br><a target="_blank" rel="noopener" href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a>  </p>
-<h3 id="2-完整复制以下代码到R"><a href="#2-完整复制以下代码到R" class="headerlink" title="2.完整复制以下代码到R"></a>2.完整复制以下代码到R</h3><p>建议用txt等文本文件保存最原始的以及自己修改过的各种版本，方便改进    </p>
+        <h1 id="Workflow-2-Differential-expression"><a href="#Workflow-2-Differential-expression" class="headerlink" title="Workflow(2) Differential expression"></a>Workflow(2) Differential expression</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a><strong>准备工作</strong></h2><h3 id="1-下载R-R-studio"><a href="#1-下载R-R-studio" class="headerlink" title="1.下载R, R studio"></a>1.下载R, R studio</h3><p><a target="_blank" rel="noopener" href="https://cran.r-project.org/mirrors.html">https://cran.r-project.org/mirrors.html</a><br><a target="_blank" rel="noopener" href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a></p>
+<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a><strong>实现代码</strong></h2><h3 id="1-完整复制以下代码到R"><a href="#1-完整复制以下代码到R" class="headerlink" title="1.完整复制以下代码到R"></a>1.完整复制以下代码到R</h3><p> 建议用txt等文本文件保存最原始的以及自己修改过的各种版本，方便改进<br> 代码中所有需要更改的地方已经用”#”标注,”#”为R语言的注释符号 </p>
 <pre><code>  library(&quot;lattice&quot;)
   library(ggplot2)  
   library(corrplot)   
   setwd(&quot;F:/Taogroup/People/ZH/20210427_CVSP_WHOLE PROTEIN_PEAKS_18/result/&quot;)
-  #此处改为上一节最后存储下来的文件的文件路径
+  # 此处改为上一节最后存储下来的文件的文件路径
   DataHS &lt;- read.table(&quot;proBeforeFCT.txt&quot;, header = T, sep = &quot;\t&quot;)  
+  #引号内填写自己的文件名称
   rowN &lt;- nrow(DataHS)  
   for(i in c(1 : rowN))  
   &#123;  
     g1ave &lt;- mean(as.numeric(DataHS[i, 1:3]))  
     g2ave &lt;- mean(as.numeric(DataHS[i, 4:6]))  
-    #1：3，4：6分别表示两个组别的第一列数和最后一列数，根据自己的数据修改
+    # 1：3，4：6分别表示两个组别的第一列数和最后一列数，根据自己的数据修改,g2ave2为后面一组
     FC &lt;- g2ave - g1ave  
      if(FC &gt; 1 || FC &lt; -1)  
     &#123;  
@@ -236,6 +239,7 @@
   for(i in c(1 : rowN))  
   &#123;  
    res &lt;- t.test(as.numeric(DataHS[i, 1:3]), as.numeric(DataHS[i, 4:6]), alternative = &quot;two.sided&quot;, conf.level = 0.9)
+   #此处[]内数值需要更改为自己的列数
    pVal &lt;- res$p.value
    if(pVal &lt; 0.05 || pVal &gt; 0.95)
    &#123;
@@ -261,6 +265,7 @@
      &#123;
   DataHS[i, &quot;sig&quot;] = &quot;Tup&quot;
 &#125;
+#此处&quot;&quot;内容根据组别更改，第一个为g2高表达，第二个为g1高表达
    &#125;
    else
    &#123;
@@ -268,10 +273,14 @@
    &#125;
  &#125;
  write.table(DataHS, &quot;T-FC-prodiff.txt&quot;, row.names = FALSE, quote = FALSE, sep = &quot;\t&quot;)
-
- A &lt;- max(DataHS$fold.change)
+ #引号内为差异表达的结果，可直接复制粘贴到excel中查看  
+</code></pre>
+<h3 id="2-简易火山图和热图"><a href="#2-简易火山图和热图" class="headerlink" title="2.简易火山图和热图"></a>2.简易火山图和热图</h3><h4 id="2-1最简单的火山图可以由1-的数据直接绘制，所以这里介绍一下方法"><a href="#2-1最简单的火山图可以由1-的数据直接绘制，所以这里介绍一下方法" class="headerlink" title="2.1最简单的火山图可以由1.的数据直接绘制，所以这里介绍一下方法"></a>2.1最简单的火山图可以由1.的数据直接绘制，所以这里介绍一下方法</h4><p>首先运行以下两行</p>
+<pre><code> A &lt;- max(DataHS$fold.change)
  B &lt;- min(DataHS$fold.change)
- ggplot(DataHS,aes(fold.change,t.test.p.value, color = sig))+
+</code></pre>
+<p>在Rstudio右侧查看A和B的数值，下面需要用到<br><img src="/images/10.jpg" alt="查看右侧AB数值"></p>
+<pre><code>ggplot(DataHS,aes(fold.change,t.test.p.value, color = sig))+
   geom_point()+xlim(-5,5)+labs(x=&quot;log2(FoldChange)&quot;, y=&quot;-log10(pValue)&quot;) + 
   scale_color_manual(values =c(&quot;red&quot;,&quot;gray&quot;,&quot;blue&quot;))+
   geom_hline(yintercept=-log10(0.05),linetype=4)+
@@ -279,12 +288,18 @@
   theme_bw()+
   theme(legend.title = element_blank())
  dev.off()
-
-
- data=read.table(file=&quot;proZ.txt&quot;,header=T,sep=&quot;\t&quot;)
- rownames(data)=data[,9]
- pheatmap(data[,1:8],show_rownames =T,cluster_cols = F,fontsize_row=7)
+ #第二行xlim后括号里的数值根据AB绝对值的最大值填写，这里是设置横坐标
+ #第三行颜色部分建议修改，直接网上搜索R语言颜色代码，修改替代，另外出图时颜色顺序是按照分组的首字母排序的，有时候高低表达和不显著的颜色会交换，出现问题，建议在R里先看一下，有需要交换顺序的，看好要交换的颜色，将上述代码中的颜色位置直接换一下，再导出图片。导出图片点击右边plot放大，export，另外还可以修改代码直接导出pdf或者其他格式，具体方法会在下一节介绍。
 </code></pre>
+<h4 id="2-2-简易热图"><a href="#2-2-简易热图" class="headerlink" title="2.2 简易热图"></a>2.2 简易热图</h4><p>将需要作图的数据复制粘贴出来为一个单独的txt文件，每一行为一个蛋白，每一列为一个样本，蛋白名放在最后一列  </p>
+<pre><code> data=read.table(file=&quot;proZ.txt&quot;,header=T,sep=&quot;\t&quot;)
+ rownames(data)=data[,9]
+ #[]内逗号后填写蛋白名的列数
+ pheatmap(data[,1:8],show_rownames =T,cluster_cols = F,fontsize_row=7)
+ #[]内逗号后填写蛋白表达量的列数，冒号表示从第几列到第几列，1：8表示从第一列到第八列
+ #同样，运行完这三行，会在Rstudio的右边出现图片，点击export导出  
+</code></pre>
+<p>pheatmap功能很多，修改图片比例，注释字体，颜色，可以直接百度搜索”pheatmap参数” 学习<br>推荐：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/31a92d6dc746">https://www.jianshu.com/p/31a92d6dc746</a></p>
 
     </div>
 
