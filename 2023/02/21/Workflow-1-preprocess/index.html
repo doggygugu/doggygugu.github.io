@@ -19,23 +19,38 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="Workflow(1) Preprocess本篇为蛋白组数据处理第一篇，整体讲一下流程   准备工作：1.下载Perseus具体步骤:1.peaks搜库2.打开Perseus3.点击上传数据     4.peaks搜库结果文件为csv，更改右下角数据格式以发现文件   5.导入数据   6.对数据进行log转换Basic-&gt;transform-&gt;ok注意：这里默认的就是log2，如果有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Workflow(1) Preprocess">
+<meta property="og:url" content="http://example.com/2023/02/21/Workflow-1-preprocess/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Workflow(1) Preprocess本篇为蛋白组数据处理第一篇，整体讲一下流程   准备工作：1.下载Perseus具体步骤:1.peaks搜库2.打开Perseus3.点击上传数据     4.peaks搜库结果文件为csv，更改右下角数据格式以发现文件   5.导入数据   6.对数据进行log转换Basic-&gt;transform-&gt;ok注意：这里默认的就是log2，如果有">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/1.jpg">
+<meta property="og:image" content="http://example.com/images/2.jpg">
+<meta property="og:image" content="http://example.com/images/3.jpg">
+<meta property="og:image" content="http://example.com/images/4.jpg">
+<meta property="og:image" content="http://example.com/images/5.jpg">
+<meta property="og:image" content="http://example.com/images/6.jpg">
+<meta property="og:image" content="http://example.com/images/7.jpg">
+<meta property="og:image" content="http://example.com/images/8.jpg">
+<meta property="og:image" content="http://example.com/images/9.jpg">
+<meta property="article:published_time" content="2023-02-21T07:07:40.000Z">
+<meta property="article:modified_time" content="2023-02-21T09:21:53.664Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Workflow">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/1.jpg">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2023/02/21/Workflow-1-preprocess/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2023/02/21/Workflow-1-preprocess/","path":"2023/02/21/Workflow-1-preprocess/","title":"Workflow(1) Preprocess"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hexo</title>
+<title>Workflow(1) Preprocess | Hexo</title>
   
 
 
@@ -65,7 +80,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Hexo</h1>
+      <p class="site-title">Hexo</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -87,7 +102,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -100,6 +115,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Workflow-1-Preprocess"><span class="nav-number">1.</span> <span class="nav-text">Workflow(1) Preprocess</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">准备工作：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%8B%E8%BD%BDPerseus"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.下载Perseus</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.2.</span> <span class="nav-text">具体步骤:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-peaks%E6%90%9C%E5%BA%93"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.peaks搜库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%89%93%E5%BC%80Perseus"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.打开Perseus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%82%B9%E5%87%BB%E4%B8%8A%E4%BC%A0%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.点击上传数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-peaks%E6%90%9C%E5%BA%93%E7%BB%93%E6%9E%9C%E6%96%87%E4%BB%B6%E4%B8%BAcsv%EF%BC%8C%E6%9B%B4%E6%94%B9%E5%8F%B3%E4%B8%8B%E8%A7%92%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F%E4%BB%A5%E5%8F%91%E7%8E%B0%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.peaks搜库结果文件为csv，更改右下角数据格式以发现文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.5.</span> <span class="nav-text">5.导入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%AF%B9%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8Clog%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.2.6.</span> <span class="nav-text">6.对数据进行log转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E8%BF%87%E6%BB%A4%E6%97%A0%E6%95%88%E8%9B%8B%E7%99%BD"><span class="nav-number">1.2.7.</span> <span class="nav-text">7.过滤无效蛋白</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-%E5%A4%84%E6%95%B0%E5%80%BC%E6%9C%80%E5%B0%91%E4%B8%BA%E6%A0%B7%E6%9C%AC%E6%80%BB%E6%95%B0%E7%9A%84%E4%B8%80%E5%8D%8A%EF%BC%8C%E5%A6%82%E6%9E%9C%E7%95%99%E4%B8%8B%E7%9A%84%E8%9B%8B%E7%99%BD%E8%BE%83%E5%A4%9A%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%80%82%E5%BD%93%E6%8F%90%E9%AB%98%E6%A0%87%E5%87%86%E6%8F%90%E9%AB%98%E6%9C%80%E5%B0%91%E6%95%B0%E9%87%8F%E3%80%82"><span class="nav-number">1.2.7.1.</span> <span class="nav-text">7.1.处数值最少为样本总数的一半，如果留下的蛋白较多，可以适当提高标准提高最少数量。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2-Mode%E5%8F%AF%E4%BB%A5%E9%80%89In-total%E4%B9%9F%E5%8F%AF%E4%BB%A5%E9%80%89In-each-group%E3%80%82"><span class="nav-number">1.2.7.2.</span> <span class="nav-text">7.2.Mode可以选In total也可以选In each group。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E8%BF%87%E6%BB%A4PTM"><span class="nav-number">1.2.8.</span> <span class="nav-text">8.过滤PTM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-1-1%E5%A4%84%E9%80%89%E4%B8%BAPTM%EF%BC%8C2%E5%A4%84%E6%A0%B9%E6%8D%AE%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E9%80%89%E6%8B%A9ptm%E5%8A%A0%E5%85%A5%E5%8F%B3%E8%BE%B9%E7%9A%84%E8%BE%B9%E6%A1%86%EF%BC%8C3%E5%A4%84%E9%80%89Keep-matching-rows"><span class="nav-number">1.2.8.1.</span> <span class="nav-text">8.1 1处选为PTM，2处根据数据类型选择ptm加入右边的边框，3处选Keep matching rows</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-%E5%A1%AB%E8%A1%A5%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="nav-number">1.2.9.</span> <span class="nav-text">9.填补缺失值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-%E5%BD%92%E4%B8%80%E5%8C%96"><span class="nav-number">1.2.10.</span> <span class="nav-text">10.归一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-%E5%AF%BC%E5%87%BA%E9%A2%84%E5%A4%84%E7%90%86%E6%95%B0%E5%80%BC"><span class="nav-number">1.2.11.</span> <span class="nav-text">11.导出预处理数值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-%E6%89%93%E5%BC%80%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.12.</span> <span class="nav-text">12.打开处理流程文件</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -137,84 +153,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/21/workflow-1-preprocess-0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/02/21/workflow-1-preprocess-0/" class="post-title-link" itemprop="url">workflow-1-preprocess</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-02-21 17:12:19" itemprop="dateCreated datePublished" datetime="2023-02-21T17:12:19+08:00">2023-02-21</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/21/Workflow-1-preprocess/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -228,13 +177,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="name" content="Workflow(1) Preprocess | Hexo">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/02/21/Workflow-1-preprocess/" class="post-title-link" itemprop="url">Workflow(1) Preprocess</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Workflow(1) Preprocess
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -267,7 +216,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Workflow-1-Preprocess"><a href="#Workflow-1-Preprocess" class="headerlink" title="Workflow(1) Preprocess"></a>Workflow(1) Preprocess</h1><p>本篇为蛋白组数据处理第一篇，整体讲一下流程  </p>
+        <h1 id="Workflow-1-Preprocess"><a href="#Workflow-1-Preprocess" class="headerlink" title="Workflow(1) Preprocess"></a>Workflow(1) Preprocess</h1><p>本篇为蛋白组数据处理第一篇，整体讲一下流程  </p>
 <h2 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a><strong>准备工作：</strong></h2><h3 id="1-下载Perseus"><a href="#1-下载Perseus" class="headerlink" title="1.下载Perseus"></a>1.下载Perseus</h3><h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤:"></a><strong>具体步骤:</strong></h2><h3 id="1-peaks搜库"><a href="#1-peaks搜库" class="headerlink" title="1.peaks搜库"></a>1.peaks搜库</h3><h3 id="2-打开Perseus"><a href="#2-打开Perseus" class="headerlink" title="2.打开Perseus"></a>2.打开Perseus</h3><h3 id="3-点击上传数据"><a href="#3-点击上传数据" class="headerlink" title="3.点击上传数据"></a>3.点击上传数据</h3><p><img src="/images/1.jpg" alt="上传数据步骤">    </p>
 <h3 id="4-peaks搜库结果文件为csv，更改右下角数据格式以发现文件"><a href="#4-peaks搜库结果文件为csv，更改右下角数据格式以发现文件" class="headerlink" title="4.peaks搜库结果文件为csv，更改右下角数据格式以发现文件"></a>4.peaks搜库结果文件为csv，更改右下角数据格式以发现文件</h3><p><img src="/images/2.jpg" alt="上传数据步骤2">  </p>
 <h3 id="5-导入数据"><a href="#5-导入数据" class="headerlink" title="5.导入数据"></a>5.导入数据</h3><p><img src="/images/3.jpg" alt="上传数据步骤3">  </p>
@@ -280,7 +229,6 @@
 <h3 id="11-导出预处理数值"><a href="#11-导出预处理数值" class="headerlink" title="11.导出预处理数值"></a>11.导出预处理数值</h3><p><img src="/images/8.jpg" alt="保存"><br>保存处理好的数据最后一步，同时，中间的每一步结果也可以根据需要导出。  </p>
 <h3 id="12-打开处理流程文件"><a href="#12-打开处理流程文件" class="headerlink" title="12.打开处理流程文件"></a>12.打开处理流程文件</h3><p><img src="/images/9.jpg" alt="打开sps文件"><br>同时注意，处理流程也要保留，以供之后查阅。<br>下次再次打开本次处理流程也从文件处点击打开，步骤为：先打开Perseus,再点击 文件 -&gt; open</p>
 
-      
     </div>
 
     
@@ -288,92 +236,28 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/Workflow/" rel="tag"># Workflow</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/01/31/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/02/21/workflow-1-preprocess-0/" rel="next" title="workflow-1-preprocess">
+                  workflow-1-preprocess <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/31/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/01/31/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-01-31 14:22:29" itemprop="dateCreated datePublished" datetime="2023-01-31T14:22:29+08:00">2023-01-31</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
