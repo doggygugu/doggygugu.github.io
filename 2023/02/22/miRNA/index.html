@@ -25,8 +25,9 @@
 <meta property="og:site_name" content="Yannis">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-22T04:01:36.000Z">
-<meta property="article:modified_time" content="2023-02-22T04:01:36.514Z">
+<meta property="article:modified_time" content="2023-02-22T04:15:56.704Z">
 <meta property="article:author" content="Yajie">
+<meta property="article:tag" content="miRNA">
 <meta name="twitter:card" content="summary">
 
 
@@ -89,7 +90,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -102,6 +103,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E7%AB%A0%E4%BC%9A%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8BmiRNA%E7%9A%84%E6%95%B4%E4%BD%93%E6%B5%81%E7%A8%8B-%E5%BE%85%E5%A1%AB%E5%9D%91"><span class="nav-number">1.</span> <span class="nav-text">本章会介绍一下miRNA的整体流程(待填坑)</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -119,11 +121,11 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -178,8 +180,18 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2023-02-22 12:01:36" itemprop="dateCreated datePublished" datetime="2023-02-22T12:01:36+08:00">2023-02-22</time>
+      <time title="Created: 2023-02-22 12:01:36 / Modified: 12:15:56" itemprop="dateCreated datePublished" datetime="2023-02-22T12:01:36+08:00">2023-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Genomics/" itemprop="url" rel="index"><span itemprop="name">Genomics</span></a>
+        </span>
     </span>
 
   
@@ -194,6 +206,11 @@
     <div class="post-body" itemprop="articleBody">
         <center>  </center>
 <span id="more"></span>
+
+<h1 id="本章会介绍一下miRNA的整体流程-待填坑"><a href="#本章会介绍一下miRNA的整体流程-待填坑" class="headerlink" title="本章会介绍一下miRNA的整体流程(待填坑)"></a>本章会介绍一下miRNA的整体流程(待填坑)</h1><p>需要Linux操作系统和R语言  </p>
+<p>miRNA-Human-PE</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#把sra格式转化为fastq</span></span><br><span class="line">raw_data=<span class="string">&#x27;SRR*&#x27;</span></span><br><span class="line"><span class="keyword">for</span> each <span class="keyword">in</span> <span class="variable">$&#123;raw_data&#125;</span></span><br><span class="line"><span class="keyword">do</span> ~/biosoft/sratoolkit.2.6.3-centos_linux64/bin/fastq-dump --split-3 <span class="variable">$each</span> -O ./</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#进行第一次fastqc,输出到本目录下firstQC</span></span><br><span class="line">fastq=<span class="string">&#x27;*.fastq&#x27;</span></span><br><span class="line"><span class="keyword">for</span> data <span class="keyword">in</span> <span class="variable">$&#123;fastq&#125;</span></span><br><span class="line"><span class="keyword">do</span>  ~/biosoft/FastQC/fastqc -o ./firstQC -t 2 <span class="variable">$data</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#用Trimmomatic进行去接头和低质量过滤,-phred33根据实际情况更改，一般为33</span></span><br><span class="line">fortrimmer1=<span class="string">&#x27;*1.fastq&#x27;</span></span><br><span class="line">fortrimmer2=<span class="string">&#x27;*2.fastq&#x27;</span></span><br><span class="line"><span class="keyword">for</span> data1 <span class="keyword">in</span> <span class="variable">$&#123;fortrimmer1&#125;</span> &amp; <span class="keyword">for</span> data2 <span class="keyword">in</span> <span class="variable">$&#123;fortrimmer2&#125;</span></span><br><span class="line"><span class="keyword">do</span> java -jar ~/biosoft/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads 2 -phred33 <span class="variable">$data1</span> <span class="variable">$data2</span> <span class="variable">$data1</span>.paired.clean.fastq <span class="variable">$data1</span>.unpaired.clean.fastq <span class="variable">$data2</span>.paired.clean.fastq <span class="variable">$data2</span>.unpaired.clean.fastq ILLUMINACLIP:/home/yannis/biosoft/Trimmomatic-0.39/adapters/TruSeq3-SE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:2:25 MINLEN:16</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#进行第二次质控，输出到本目录下的secondQC</span></span><br><span class="line">second_clean=<span class="string">&#x27;*.clean.fastq&#x27;</span></span><br><span class="line"><span class="keyword">for</span> clean_data <span class="keyword">in</span> <span class="variable">$&#123;second_clean&#125;</span></span><br><span class="line"><span class="keyword">do</span> ~/biosoft/FastQC/fastqc -o ./secondQC -t 2 <span class="variable">$clean_data</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#比对,比对的接头序列按需要修改，与去接头质量过滤一致,与全基因组进行的比对</span></span><br><span class="line">clean=<span class="string">&#x27;*.clean.fastq&#x27;</span></span><br><span class="line"><span class="keyword">for</span> clean_data <span class="keyword">in</span> <span class="variable">$&#123;clean&#125;</span></span><br><span class="line"><span class="keyword">do</span> mapper.pl <span class="variable">$clean_data</span> -e -h -i -j -m -k AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -l 16 -p ~/reference/index/mature.human -s <span class="variable">$clean_data</span>.fa -t <span class="variable">$clean_data</span>.arf -o 1 -n</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#定量,最后一个参数根据物种修改</span></span><br><span class="line">mapresult=<span class="string">&#x27;*.fa&#x27;</span></span><br><span class="line"><span class="keyword">for</span> result <span class="keyword">in</span> <span class="variable">$&#123;mapresult&#125;</span></span><br><span class="line"><span class="keyword">do</span> quantifier.pl -p ~/reference/hairpin.human.fa -m ~/reference/mature.human.fa -r <span class="variable">$result</span> -t hsa</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -201,6 +218,9 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/miRNA/" rel="tag"># miRNA</a>
+          </div>
 
         
 
